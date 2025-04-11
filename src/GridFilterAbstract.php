@@ -20,30 +20,30 @@ use LogicException;
 abstract class GridFilterAbstract
 {
 
-    public const EQ       = 'EQ';
-    public const NEQ      = 'NEQ';
-    public const IN       = 'IN';
-    public const NIN      = 'NIN';
-    public const GT       = 'GT';
-    public const LT       = 'LT';
-    public const GTE      = 'GTE';
-    public const LTE      = 'LTE';
-    public const LIKE     = 'LIKE';
-    public const STARTS   = 'STARTS';
-    public const ENDS     = 'ENDS';
-    public const NEMPTY   = 'NEMPTY';
-    public const EMPTY    = 'EMPTY';
-    public const BETWEEN  = 'BETWEEN';
-    public const NBETWEEN = 'NBETWEEN';
+    public const string EQ       = 'EQ';
+    public const string NEQ      = 'NEQ';
+    public const string IN       = 'IN';
+    public const string NIN      = 'NIN';
+    public const string GT       = 'GT';
+    public const string LT       = 'LT';
+    public const string GTE      = 'GTE';
+    public const string LTE      = 'LTE';
+    public const string LIKE     = 'LIKE';
+    public const string STARTS   = 'STARTS';
+    public const string ENDS     = 'ENDS';
+    public const string NEMPTY   = 'NEMPTY';
+    public const string EMPTY    = 'EMPTY';
+    public const string BETWEEN  = 'BETWEEN';
+    public const string NBETWEEN = 'NBETWEEN';
 
-    public const ASCENDING  = 'ASC';
-    public const DESCENDING = 'DESC';
+    public const string ASCENDING  = 'ASC';
+    public const string DESCENDING = 'DESC';
 
-    public const COLUMN    = 'column';
-    public const OPERATOR  = 'operator';
-    public const VALUE     = 'value';
-    public const DIRECTION = 'direction';
-    public const SEARCH    = 'search';
+    public const string COLUMN    = 'column';
+    public const string OPERATOR  = 'operator';
+    public const string VALUE     = 'value';
+    public const string DIRECTION = 'direction';
+    public const string SEARCH    = 'search';
 
     /**
      * @var string
@@ -428,7 +428,7 @@ abstract class GridFilterAbstract
         if ($search) {
             $searchExpression = $builder->expr()->orX();
 
-            if (empty($this->searchableCols)) {
+            if ($this->searchableCols === []) {
                 throw new GridException(
                     sprintf(
                         "Column cannot be used for searching! Have you forgotten add it to '%s::searchableCols'?",

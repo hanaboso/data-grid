@@ -15,7 +15,7 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 final class ResultData
 {
 
-    private const DATE_TIME = 'Y-m-d H:i:s';
+    private const string DATE_TIME = 'Y-m-d H:i:s';
 
     /**
      * @var bool
@@ -27,7 +27,7 @@ final class ResultData
      *
      * @param Query $query
      */
-    public function __construct(private readonly Query $query)
+    public function __construct(private readonly Query $query) // @phpstan-ignore-line
     {
     }
 

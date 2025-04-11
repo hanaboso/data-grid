@@ -20,14 +20,14 @@ use LogicException;
 final class FilterTest extends TestCaseAbstract
 {
 
-    protected const PAGING = 'paging';
+    protected const string PAGING = 'paging';
 
-    private const DATETIME       = 'Y-m-d H:i:s';
-    private const SORTER         = 'sorter';
-    private const FILTER         = 'filter';
-    private const PAGE           = 'page';
-    private const SEARCH         = 'search';
-    private const ITEMS_PER_PAGE = 'itemsPerPage';
+    private const string DATETIME       = 'Y-m-d H:i:s';
+    private const string SORTER         = 'sorter';
+    private const string FILTER         = 'filter';
+    private const string PAGE           = 'page';
+    private const string SEARCH         = 'search';
+    private const string ITEMS_PER_PAGE = 'itemsPerPage';
 
     /**
      * @var DateTime
@@ -1216,10 +1216,10 @@ final class FilterTest extends TestCaseAbstract
                     ],
                 ),
             );
-            self::assertEquals(TRUE, FALSE);
+            self::fail();
         } catch (GridException $e) {
-            self::assertEquals(GridException::SORT_COLS_ERROR, $e->getCode());
-            self::assertEquals(
+            self::assertSame(GridException::SORT_COLS_ERROR, $e->getCode());
+            self::assertSame(
                 "Column 'Unknown' cannot be used for sorting! Have you forgotten add it to 'DataGridTests\Filter\EntityFilter::orderCols'?",
                 $e->getMessage(),
             );
@@ -1969,7 +1969,7 @@ final class FilterTest extends TestCaseAbstract
             $dto->getParamsForHeader(),
         );
 
-        $document = (new EntityFilter($this->em));
+        $document = new EntityFilter($this->em);
         $this->setProperty($document, 'countQuery', NULL);
         $dto    = new GridRequestDto(
             [
@@ -2128,7 +2128,7 @@ final class FilterTest extends TestCaseAbstract
             ],
         );
 
-        $f = (new EntityFilter($this->em));
+        $f = new EntityFilter($this->em);
         $this->setProperty($f, 'searchableCols', []);
 
         self::expectException(GridException::class);
@@ -2147,7 +2147,7 @@ final class FilterTest extends TestCaseAbstract
             ],
         );
 
-        $f = (new EntityFilter($this->em));
+        $f = new EntityFilter($this->em);
         $this->setProperty($f, 'filterCols', []);
 
         self::expectException(GridException::class);

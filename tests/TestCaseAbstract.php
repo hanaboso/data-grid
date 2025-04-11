@@ -26,9 +26,9 @@ abstract class TestCaseAbstract extends TestCase
     use PrivateTrait;
     use RestoreErrorHandlersTrait;
 
-    protected const DATABASE = 'datagrid';
+    protected const string DATABASE = 'datagrid';
 
-    private const   TEMP_DIR = '%s/../var/Doctrine2.ORM';
+    private const string TEMP_DIR = '%s/../var/Doctrine2.ORM';
 
     /**
      * @var EntityManager

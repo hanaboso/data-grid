@@ -16,7 +16,7 @@ use Exception;
 final class DatabaseConfigurationTest extends TestCaseAbstract
 {
 
-    protected const DATABASE = 'datagrid1';
+    protected const string DATABASE = 'datagrid1';
 
     /**
      * @throws Exception
@@ -37,7 +37,7 @@ final class DatabaseConfigurationTest extends TestCaseAbstract
         /** @var Entity[] $entities */
         $entities = $this->em->getRepository(Entity::class)->findAll();
         self::assertEquals(1, count($entities));
-        self::assertEquals('Entity', $entities[0]->getString());
+        self::assertSame('Entity', $entities[0]->getString());
     }
 
 }

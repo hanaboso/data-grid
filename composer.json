@@ -2,16 +2,16 @@
     "name": "hanaboso/data-grid",
     "description": "Data grid",
     "license": "Apache-2.0",
-    "version": "2.4.0",
+    "version": "2.5.0",
     "require": {
-        "php": "^8.3",
+        "php": "^8.4",
         "ext-ctype": "*",
         "ext-intl": "*",
         "ext-mbstring": "*",
         "beberlei/doctrineextensions": "^1.5",
         "doctrine/annotations": "^1.14",
-        "doctrine/orm": "^2.19",
-        "hanaboso/utils": "^1.5"
+        "doctrine/orm": "^2.20",
+        "hanaboso/utils": "^1.6"
     },
     "require-dev": {
         "hanaboso/php-check-utils": "^1.6"

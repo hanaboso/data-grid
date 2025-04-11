@@ -15,7 +15,7 @@ use Hanaboso\DataGrid\GridRequestDto;
 final class GridHandlerTraitTest extends TestCaseAbstract
 {
 
-    protected const DATABASE = 'datagrid2';
+    protected const string DATABASE = 'datagrid2';
 
     /**
      * @throws Exception
